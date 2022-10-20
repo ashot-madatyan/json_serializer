@@ -47,9 +47,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "json_data_processor.h"
-//#include "json_tlv_serializer.h"
-//#include "json_raw_data_reader.h"
-//#include "json_tlv_value.h"
 
 using namespace std;
 
@@ -114,7 +111,6 @@ int tlv_test_write_read()
     return 0;
 }
 
-
 int tlv_test_write_read_string()
 {
     /*
@@ -139,8 +135,6 @@ int tlv_test_write_read_string()
 
         if (!(str == chk))
             throw(runtime_error("'tlv_test_write_read_string' test failed"));
-
-        //printf("read string: '%s'\n", chk.c_str());
     }
     catch (const runtime_error& e)
     {
@@ -213,9 +207,8 @@ int main(int argc, const char* argv[])
         //tlv_test_write_read();
         //tlv_test_write_read_string();
         //test_raw_data_reader();
-        test_data_processor(argv[1], argv[2]);
-
         //test_tlv_value();
+        test_data_processor(argv[1], argv[2]);
 
         return 0;
     }
