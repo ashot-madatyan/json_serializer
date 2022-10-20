@@ -6,7 +6,7 @@
 #include <memory>
 
 /**
-  *  This is a simple class for reading data strems of json formatted strings per each line.
+  * This is a simple class for reading data strems of json formatted strings per each line.
 */
 class raw_data_file_reader
 {
