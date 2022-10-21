@@ -99,8 +99,7 @@ int tlv_test_write_read()
         ds.read(&dat44);
 
         if (!(dat1 == dat11 && dat2 == dat22 && dat3 == dat33))
-            throw(runtime_error("'tlv_test_write_read' test failed"));
-                
+            throw(runtime_error("'tlv_test_write_read' test failed"));                
     }
     catch (const runtime_error& e)
     {
@@ -145,11 +144,11 @@ int tlv_test_write_read_string()
     return 0;
 }
 
-void test_raw_data_reader()
+void test_raw_data_reader(const string& infile)
 {
     raw_data_file_reader rdr;
 
-    if (rdr.open("D:/test_projects/interview/nxlog/test_inp_file.txt"))
+    if (rdr.open(infile))
     {
         printf("failed to read the input file 'raw_json_data.txt'\n");
         return;
@@ -183,11 +182,6 @@ void test_tlv_value()
     tlv_value tstr(s);
     tlv_value tt = tstr;
     tstr = tstr;
-
-
-    // tlv_value k = "kuku"; // Unsupported DT
-
-    //string ss = string((char*)tstr.data());
 }
 
 void usage(int argc, const char* argv[])
@@ -206,10 +200,9 @@ int main(int argc, const char* argv[])
         //tlv_test_not_init();
         //tlv_test_write_read();
         //tlv_test_write_read_string();
-        //test_raw_data_reader();
+        //test_raw_data_reader(argv[1]);
         //test_tlv_value();
         test_data_processor(argv[1], argv[2]);
-
         return 0;
     }
     catch (const runtime_error& e)

@@ -75,7 +75,13 @@ public:
 		}
 		else if (is_same<T, const char*>())
 		{
-			const char* pstr = (const char*)&value;
+			const char** pstr((const char**) (&value));
+			char* pactual = const_cast<char*>(* pstr);
+			init((void*)pactual, strlen(pactual)+1, tlv_type::TLVT_STRING);
+		}
+		else if (is_same<typename std::decay<T>::type, char*>())
+		{
+			const char* pstr = (char*)&value;
 			size_t sz = strlen(pstr) + 1;
 			init((void*)pstr, sz, tlv_type::TLVT_STRING);
 		}

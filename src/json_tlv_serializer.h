@@ -132,7 +132,6 @@ void tlv_data_serializer::write<string>(const string& data)
 
     size_t szchar = sizeof(char);
     size_t szstr = data.size();
-
     size_t rv = fwrite((void*)data.c_str(), sizeof(char), data.size(), pf_);
 }
 
