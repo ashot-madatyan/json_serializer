@@ -48,9 +48,11 @@
     The tested toolchains are:
         - MSVS v2022, with C++ language set to C++17
         - g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
-
+    
+     In Windows, just build the solution. In Linux, run the 'make' and find the binary in the ./bin directory.
+    
 ## Running and testing
-    Run the application by providing two file name: 1 (existing) input file that contains sample JSON inputs delimited by new line or Cr+Ln
+    Run the application by providing two file names: 1 (existing) input file that contains sample JSON inputs delimited by new line or Cr+Lf
     character(s), and another one for the output(not necessarilly existing one). A sample input file is provided (test_inp_file.txt).
     After successfully finishing, the application will print out the parsed data, while the output file will contain binary TLV-encoded 
     data of the original JSON and the trailing output of the mapped keys dictionary.
